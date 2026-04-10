@@ -1,0 +1,24 @@
+name: idea
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python>=3.9
+  - pip
+  - numpy
+  - pandas
+  - pyyaml
+  - tqdm
+  - filelock
+  - scipy
+  - scikit-learn
+  - optuna
+  - threadpoolctl
+  - lightgbm
+  - pandas-plink
+  - matplotlib
+  - openjdk
+  - bcftools
+  - plink2
+  - pip:
+      - .
