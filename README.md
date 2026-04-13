@@ -23,7 +23,6 @@ conda env create -f environment.yml
 conda activate idea
 pip install -e .
 ```
-<img width="992" height="1057" alt="Gemini_Generated_Image_umz1fhumz1fhumz1" src="https://github.com/user-attachments/assets/fed9300e-5aee-4625-adff-19d9c5860f3e" />
 
 ### Option B: pip (from source)
 
