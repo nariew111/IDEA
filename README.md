@@ -1,4 +1,4 @@
-# IDEA: A Future-Proof Imputation-Driven SNP Array Design and Genomic Prediction Framework
+<img width="992" height="1057" alt="Gemini_Generated_Image_umz1fhumz1fhumz1" src="https://github.com/user-attachments/assets/745bd8b8-134b-4752-ad87-c1107bdc3fd1" /># IDEA: A Future-Proof Imputation-Driven SNP Array Design and Genomic Prediction Framework
 
 IDEA is a future-proof, imputation-driven framework for SNP array design and downstream genomic prediction. It integrates two independent suites under a single, reproducible command-line entrypoint.
 
@@ -23,6 +23,7 @@ conda env create -f environment.yml
 conda activate idea
 pip install -e .
 ```
+<img width="992" height="1057" alt="Gemini_Generated_Image_umz1fhumz1fhumz1" src="https://github.com/user-attachments/assets/fed9300e-5aee-4625-adff-19d9c5860f3e" />
 
 ### Option B: pip (from source)
 
