@@ -3,6 +3,7 @@
 IDEA is a future-proof, imputation-driven framework for SNP array design and downstream genomic prediction. It integrates two independent suites under a single, reproducible command-line entrypoint.
 
 ## Components
+<img width="686" height="719" alt="image" src="https://github.com/user-attachments/assets/92e24ff5-340e-4340-b5db-50866ee17104" />
 
 - ULDSuite: low-density SNP selection and imputation benchmarking (`idea/ULDSuite/2_ULDSuite_acc.py`)
 - HAGSuite: genomic prediction optimization and evaluation (`idea/HAGSuite/optimize_gs.py`)
