@@ -1,0 +1,20 @@
+{
+  "source_base_commit": "4b72c798ed46889879ad86831f24f5df28631403",
+  "source_snapshot_date": "2026-11-12",
+  "note": "Scientific source files copied from the local software working tree, including existing uncommitted changes. Hashes identify the imported contents; this is not certification of an exact manuscript reproduction release. Packaging and CLI changes are described in the Git history.",
+  "imported_source_sha256": {
+    "src/idea/__init__.py": "c4bf6276db144bb8a0362ea8dc23b75e4b8e1ddf4ba04080af720743a22a70dd",
+    "src/idea/cli.py": "875eb484fe43a125f5654528dd1ab569b51567104cc0224435d90ab93ccff73f",
+    "src/idea/legacy/__init__.py": "ba287ac2164c9b3c8a34857899a06ebf83902cc42d1fdc6d490c441f4d06670f",
+    "src/idea/legacy/calculate_true_accuracy.py": "04ae0bd7afdda05b432b38dc32b30e267853383c0c4aa6e12e1b5a192d4bd095",
+    "src/idea/legacy/generate_feature.py": "90c55f50b46f74679ec7a2259e6f491999a5bcb8ab88dbb9a880bb4c4f457b4f",
+    "src/idea/legacy/select_snp_no_genome.py": "160d5d4f0e028b848fa772addf5cdc08509eb85093be80dd78205eaca3d561b7",
+    "src/idea/legacy/uldsuite.py": "b66b6bdb484c144a41b7abcd5687acebb47289b193670fa24d0a42f70a70a855",
+    "src/idea/legacy/uldsuite_acc.py": "9da1265b7d7bf192a6063f1f400338299b19ea47cfd38c841bc4f9936bbe2cc1",
+    "src/idea/legacy/utils.py": "d9f364bf513d1b7d9fe9dad9c60b52feec0e4cd77f3de8a462cb9b9b22d56bc2",
+    "src/idea_gp/__init__.py": "35abd020e45f7e3bff8d194740e77dc28fbd13e3a77faf97219476fa0cc223fd",
+    "src/idea_gp/cli.py": "584f9cf6a1db9d5f3c3b791b03bcb45f9ae65ec7abc3e0a93fae9d4dd57e0c36",
+    "src/idea_gp/legacy/calc_gs.R": "239c14f75c68510db7457a1368dc17798d57a65d94900478c3c986913254e089",
+    "src/idea_gp/legacy/optimize_gs.py": "82aadcbc27dde1c3663ad335a9ebe2e73c64694b185a6aa7e86f341785f7538b"
+  }
+}

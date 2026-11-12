@@ -1,207 +1,159 @@
-# IDEA: A Future-Proof Imputation-Driven SNP Array Design and Genomic Prediction Framework
+# IDEA: Imputation-Driven SNP Array Design and Trait-Adaptive Genomic Prediction
 
-IDEA is a future-proof, imputation-driven framework for SNP array design and downstream genomic prediction. It integrates two independent suites under a single, reproducible command-line entrypoint.
+[![Tests](https://github.com/nariew111/IDEA/actions/workflows/tests.yml/badge.svg)](https://github.com/nariew111/IDEA/actions/workflows/tests.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-## Components
-<img width="686" height="719" alt="image" src="https://github.com/user-attachments/assets/92e24ff5-340e-4340-b5db-50866ee17104" />
+IDEA separates two marker-selection decisions: which SNPs to assay for genotype
+recovery, and which recovered variants to use for predicting a phenotype.
+**IDEA-design** selects sparse genotyping panels using genomic features and
+population-specific imputation calibration. **IDEA-GP** selects trait-adaptive
+prediction markers using association evidence, LD and optional imputation-quality
+information within a nested cross-validation workflow.
 
-- ULDSuite: low-density SNP selection and imputation benchmarking (`idea/ULDSuite/2_ULDSuite_acc.py`)
-- HAGSuite: genomic prediction optimization and evaluation (`idea/HAGSuite/optimize_gs.py`)
+This repository provides the two software modules, command-line entry points,
+installation instructions and a small reproducible IDEA-design selection example.
+The IDEA-design web resource is available at
+[alphaindex.zju.edu.cn/IDEA](https://alphaindex.zju.edu.cn/IDEA).
 
-## Requirements
+## Framework
 
-- Python >= 3.9
-- Common external tools: plink2, bcftools
-- ULDSuite external dependencies: Java (openjdk) and user-provided Beagle / conform-gt JARs (passed via CLI)
-- HAGSuite optional dependencies: lightgbm, pandas-plink, matplotlib
+<img width="550" alt="IDEA framework overview" src="https://github.com/user-attachments/assets/92e24ff5-340e-4340-b5db-50866ee17104" />
 
-## Installation
+The original engines are retained under `src/idea/legacy/` and
+`src/idea_gp/legacy/`. Their earlier ULDSuite and HAGSSuite names may appear in
+source comments and runner output. The installed command names are
+`idea-design` and `idea-gp`.
 
-### Option A: Conda (recommended)
+## Install
+
+```bash
+git clone https://github.com/nariew111/IDEA.git
+cd IDEA
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install -e ".[test]"
+idea-design --help
+idea-gp status
+```
+
+A Conda environment is also provided:
 
 ```bash
 conda env create -f environment.yml
-conda activate idea
-pip install -e .
+conda activate imputchip-idea
 ```
 
-### Option B: pip (from source)
+See [installation and external tools](docs/installation.md) for genomic
+executables, JAR files and model backends required by full analyses.
+
+## Run the small IDEA-design example
+
+From the repository root:
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -U pip
-pip install -e .
-pip install -e ".[hag]"
+bash scripts/run_toy_idea_design.sh
 ```
 
-Notes:
-
-- `pip install -e ".[hag]"` installs common optional dependencies for HAGSuite
-- External tools (plink2/bcftools/openjdk) are not Python dependencies; install them via conda or your system package manager
-
-## Quick Start
-
-```bash
-idea --help
-idea uld -- -h
-idea hag -- -h
-```
-
-## Command Structure
-
-IDEA forwards all arguments after `--` to the underlying suite script:
-
-```bash
-idea <uld|hag|github> -- [arguments forwarded to the suite...]
-```
-
-## ULDSuite (SNP Selection + Imputation Benchmark)
-
-### What it does
-
-1. Loads feature definitions and feature importance weights
-2. Builds bin priorities using per-feature summary files (under `--summary-root`)
-3. Selects a target number of SNPs per chromosome
-4. Optionally runs chunked Beagle imputation and evaluates accuracy against a benchmark
-
-### Inputs
-
-- Feature file: `--feature-file`
-- Feature weight CSV: `--feature-weight`
-- Feature summary root directory: `--summary-root`
-- Reference VCF: `--reference-vcf`
-- Benchmark: `--benchmark`
-- Tools: `--plink`, `--bcftools`, `--beagle-jar`, `--conform-jar`
-- Chromosomes: `--chr` (comma-separated, or a range-style single value depending on your setup)
-
-### Recommended usage (via YAML config)
-
-```bash
-idea uld -- --config path/to/config.yaml
-```
-
-Minimal example `config.yaml` (adjust paths to your environment):
-
-```yaml
-feature_file: path/to/features.txt
-feature_weight: path/to/feature_weight.csv
-summary_root: path/to/feature_summaries/
-reference_vcf: path/to/reference.vcf.gz
-benchmark: path/to/benchmark.vcf.gz
-output_dir: ./imputation_output
-beagle_jar: path/to/beagle.jar
-conform_jar: path/to/conform-gt.jar
-accuracy_script: path/to/accuracy_script.py
-plink: plink2
-bcftools: bcftools
-chr: "1,2,3"
-threads: 8
-target_snp_count: 1000
-```
-
-### Selection-only mode
-
-If you only want a SNP list without running imputation:
-
-```bash
-idea uld -- --config path/to/config.yaml --select-only --select-out selected_snps.txt
-```
-
-### Direct script execution (equivalent)
-
-```bash
-python idea/ULDSuite/2_ULDSuite_acc.py --config path/to/config.yaml
-```
-
-## HAGSuite (Genomic Prediction Optimization)
-
-### What it does
-
-HAGSuite evaluates genomic prediction performance using multiple methods (e.g., rrBLUP / lasso / KAML / LightGBM) and supports cross-validation, optional GWAS-based SNP selection, and Optuna-based hyperparameter optimization.
-
-### Minimal run
-
-At minimum, specify an output prefix:
-
-```bash
-idea hag -- --out results/run1
-```
-
-In practice you will typically also provide genotype and phenotype inputs. Common patterns:
-
-### Single dataset (bfile + pheno)
-
-```bash
-idea hag -- \
-  --bfile path/to/genotype_prefix \
-  --pheno path/to/pheno.txt \
-  --out results/run1 \
-  --method auto
-```
-
-### Train/test split inputs
-
-```bash
-idea hag -- \
-  --train_bfile path/to/train_prefix \
-  --test_bfile path/to/test_prefix \
-  --train_pheno path/to/train.pheno \
-  --test_pheno path/to/test.pheno \
-  --out results/run_split \
-  --method rrblup
-```
-
-### Cross-validation + Optuna
-
-```bash
-idea hag -- \
-  --bfile path/to/genotype_prefix \
-  --pheno path/to/pheno.txt \
-  --out results/cv_optuna \
-  --folds 5 \
-  --trials 200 \
-  --method auto
-```
-
-### Direct script execution (equivalent)
-
-```bash
-python idea/HAGSuite/optimize_gs.py -h
-```
-
-## Repository Layout
+The file `results/toy/toy_selected_snps.txt` should contain:
 
 ```text
-.
-├── idea/
-│   ├── ULDSuite/
-│   ├── HAGSuite/
-│   └── idea.py
-├── environment.yml
-└── pyproject.toml
+1_200
+1_300
+1_500
 ```
 
-## Publish to GitHub
-
-Print recommended commands:
+This artificial six-candidate example checks feature-bin ranking and SNP
+selection. It does not require PLINK, a reference panel or biological data.
+To choose another output location:
 
 ```bash
-idea github --repo https://github.com/<your-username>/idea.git
+OUT_DIR=/tmp/idea_toy_results bash scripts/run_toy_idea_design.sh
 ```
 
-Or run manually:
+## Use IDEA-design
+
+| Command | Purpose |
+| --- | --- |
+| `idea-design generate-features --help` | Prepare feature tables from genomic inputs |
+| `idea-design select --help` | Select from prepared population-specific feature tables |
+| `idea-design run --help` | Select markers and run the imputation/evaluation workflow |
+| `idea-design accuracy --help` | Evaluate recovered genotypes |
+| `idea-design run-legacy --help` | Access the earlier pipeline entry point |
+
+For the selection-and-imputation workflow, edit the input, output and tool paths
+in `configs/idea.example.yaml`, then run:
 
 ```bash
-git init
-git add .
-git commit -m "Init IDEA: ULDSuite + HAGSuite"
-git branch -M main
-git remote add origin https://github.com/<your-username>/idea.git
-git push -u origin main
+idea-design run --config configs/idea.example.yaml
 ```
 
-## Troubleshooting
+The prepared-feature selection command is used by the bundled small example.
+Population calibration summaries and feature weights are inputs to the selector;
+the artificial example weights are demonstration values.
 
-- Missing LightGBM / pandas-plink: install with `pip install -e ".[hag]"` or use the conda environment.
-- Full CLI options: run `idea uld -- -h` or `idea hag -- -h`.
+## Use IDEA-GP
+
+Inspect the underlying runner options:
+
+```bash
+idea-gp run --help
+```
+
+For your own authorized genotype and phenotype inputs:
+
+```bash
+bash configs/idea_gp.example.sh path/to/genotypes path/to/phenotypes.tsv results/gp
+```
+
+Or pass runner arguments directly:
+
+```bash
+idea-gp run \
+  --bfile path/to/genotypes \
+  --pheno path/to/phenotypes.tsv \
+  --out results/gp \
+  --folds 5 \
+  --inner_cv_folds 5 \
+  --trials 20 \
+  --method rrblup \
+  --optuna_seed 2026
+```
+
+`--bfile` is a PLINK binary prefix. The phenotype file must use the identifier
+and phenotype format accepted by the runner. The runner consumes command-line
+options; the shell example supplies them directly. Example settings are not a
+locked copy of the manuscript benchmark configurations.
+
+## Tests and reproduction materials
+
+```bash
+pytest -q
+```
+
+The tests cover command-line entry points and expected small-example selection.
+The status of manuscript-specific calibration data, fixed panel lists,
+benchmark scripts and external data access is documented in the
+[study reproducibility record](docs/manuscript_reproducibility.md).
+[Data resources and access](docs/data_availability.md) and
+[Code availability wording](docs/code_availability.md) describe the scope of the
+materials provided here.
+
+## Layout
+
+```text
+src/idea/                 IDEA-design and preserved engine scripts
+src/idea_gp/              IDEA-GP and preserved prediction engine
+configs/                  IDEA-design YAML and IDEA-GP shell example
+examples/toy/             small artificial inputs and expected SNP list
+scripts/                  small-example runner
+tests/                    package regression checks
+docs/                     installation, data access and reproduction status
+CITATION.cff              software citation metadata
+LICENSE                   MIT software licence
+```
+
+## Citation and licence
+
+Software metadata are provided in [CITATION.cff](CITATION.cff). Identify the exact
+Git commit or published release when citing a software snapshot. The source
+package is distributed under the [MIT License](LICENSE).

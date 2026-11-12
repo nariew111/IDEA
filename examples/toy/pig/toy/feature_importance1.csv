@@ -1,0 +1,5 @@
+feature,importance
+MAF,0.6
+L2,0.4
+Conserved,0.2
+Conserved_score,0.1

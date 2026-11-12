@@ -1,0 +1,2 @@
+metric	bin_1	bin_2	bin_3
+average	0.10	0.40	0.90

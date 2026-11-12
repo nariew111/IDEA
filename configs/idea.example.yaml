@@ -1,0 +1,37 @@
+# Example configuration for `idea-design run --config configs/idea.example.yaml`.
+# Replace placeholder paths before running on real data.
+
+feature_file: examples/toy/pig/toy/toy_feature_8.txt
+feature_weight: examples/toy/pig/toy/feature_importance1.csv
+summary_root: examples/toy/pig/toy
+reference_vcf: /path/to/reference.vcf.gz
+benchmark: /path/to/benchmark.vcf.gz
+output_dir: results/example_run
+
+beagle_jar: /path/to/beagle.jar
+conform_jar: /path/to/conform-gt.jar
+accuracy_script: src/idea/legacy/calculate_true_accuracy.py
+
+plink: plink2
+bcftools: bcftools
+chr: null
+test_chr: null
+
+threads: 4
+beagle_mem: 16
+num_bins: 1000
+snp_bin_size: 50000
+target_snp_count: 1000
+target_snp_total: null
+default_feature_bins: 6
+max_retries: 2
+window_size: 5000000
+keep_intermediate: false
+cleanup: true
+skip_imputation: false
+enable_chunk: false
+dynamic_window: false
+max_snps_per_chunk: 15000
+max_chunk_size: 1000000
+max_total_mem: 64
+max_concurrent_tasks: 4

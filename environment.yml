@@ -1,24 +1,27 @@
-name: idea
+name: imputchip-idea
 channels:
   - conda-forge
   - bioconda
+  - defaults
 dependencies:
   - python>=3.9
   - pip
   - numpy
-  - pandas
+  - optuna
+  - pandas<3
+  - scipy
+  - scikit-learn
   - pyyaml
   - tqdm
   - filelock
-  - scipy
-  - scikit-learn
-  - optuna
-  - threadpoolctl
-  - lightgbm
-  - pandas-plink
-  - matplotlib
-  - openjdk
   - bcftools
+  - plink
   - plink2
+  - bedtools
+  - openjdk
+  - r-base
+  - pytest
   - pip:
-      - .
+      - -e .
+      - lightgbm
+      - pandas-plink
