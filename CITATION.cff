@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-title: "IDEA: Imputation-driven SNP array design and genomic prediction"
+title: "IDEA: An Imputation-Driven SNP Array Design and Trait-Adaptive Genomic Prediction Framework"
 message: "If you use IDEA or IDEA-GP in your work, please cite both the associated manuscript and this software release."
 type: software
 authors:
@@ -58,7 +58,7 @@ authors:
 version: "0.1.0"
 license: "MIT"
 repository-code: "https://github.com/nariew111/IDEA"
-abstract: "IDEA (Imputation-Driven SNP Array Design and Genomic Prediction Framework) provides two complementary modules: (i) IDEA-Design, an imputation-aware and feature-guided low-density SNP panel selector; (ii) IDEA-GP, the renamed and repackaged HAGSSuite module for trait-adaptive nested cross-validation genomic prediction on designed panels. A web-based portal for IDEA-Design is hosted at https://alphaindex.zju.edu.cn/IDEA ."
+abstract: "IDEA separates SNP selection for sparse genomic measurement from marker selection for phenotype prediction. IDEA-design uses genomic features and population-specific imputation calibration to prioritize assay markers. IDEA-GP selects trait-adaptive prediction markers using association evidence, linkage disequilibrium and optional imputation-quality information in a nested cross-validation workflow. The repository provides core software, usage guides and an artificial IDEA-design example. The IDEA-design web resource is available at https://alphaindex.zju.edu.cn/IDEA ."
 keywords:
   - genomic-prediction
   - snp-array-design

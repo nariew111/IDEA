@@ -11,3 +11,5 @@ results/
 *.log
 *.tmp
 .DS_Store
+.venv/
+ukb_audit_reports/

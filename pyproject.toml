@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "imputchip-idea"
 version = "0.1.0"
-description = "IDEA imputation-driven low-density SNP array design workflow."
+description = "IDEA imputation-driven SNP panel design and trait-adaptive genomic prediction."
 readme = "README.md"
 requires-python = ">=3.9"
 license = {text = "MIT"}
