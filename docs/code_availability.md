@@ -1,12 +1,15 @@
 # Code availability wording
 
-After the source-code snapshot has been uploaded to this repository, the
-following sentence describes the core software provided here:
+The following wording describes the core software publicly provided here:
 
 > The source code for IDEA-design and IDEA-GP is available at
 > https://github.com/nariew111/IDEA under the MIT License. The repository includes
 > installation instructions, dependency specifications, example configurations
 > and a small IDEA-design example.
+
+The initial uploaded software snapshot is commit
+[`c00553fd8d40ece452dd30b9e98015e62f6d9c7e`](https://github.com/nariew111/IDEA/tree/c00553fd8d40ece452dd30b9e98015e62f6d9c7e).
+Later documentation changes can be tracked separately in the Git history.
 
 The manuscript should additionally identify the exact uploaded software commit
 or release used for the study and the actual access location of the
