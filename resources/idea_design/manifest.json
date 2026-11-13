@@ -1,0 +1,350 @@
+{
+  "version": "reconstructed_20261113",
+  "created_on": "2026-11-13",
+  "status": "post-study reconstruction; not a recovered original ABS",
+  "fixed_weights": {
+    "source_file": "3_snp_group/results/Species_D/feature_importance1.csv",
+    "sha256": "584bfce3791adcfa4384be6d2529635bb9a40ce4df1acf0142a34591f242fda8",
+    "interpretation": "Preserved development-stage empirical scoring object; not a recoverable closed-form SHAP aggregation",
+    "retained_features": {
+      "MAF": "1174.0",
+      "L2": "655.0",
+      "Conserved": "470.0",
+      "Conserved_score": "400.0"
+    },
+    "other_feature_weights": "zero; retained_weights.csv omits them without changing scores"
+  },
+  "sample_selection": {
+    "seed": "20261113",
+    "count_per_population": 5,
+    "scheme": "Ascending SHA256 of UTF-8 seed TAB species TAB population TAB sample_id; ID breaks hash ties",
+    "pool": "Intersection of sample IDs in all retained-feature summaries at all listed densities for that population",
+    "outcome_used_for_selection": false,
+    "same_samples_at_all_densities": true
+  },
+  "aggregation": {
+    "method": "Arithmetic mean of five archived sample-level F1 values, separately for each feature bin and density",
+    "input_precision": "Archived summaries rounded individual F1 values to three decimal places",
+    "priority": "Higher mean F1 receives a larger rank; equal means are ordered by ascending original bin ID",
+    "numeric_feature_bin_boundaries": "Not reconstructed or changed; original bin labels are preserved"
+  },
+  "historical_archive": {
+    "interpretation": "Values and ranks actually selected by the historical reader for these source tables",
+    "missing_average_behavior": "Historical reader takes the last data row; this is not an estimated population mean",
+    "original_five_sample_ABS_verified": false
+  },
+  "coverage": {
+    "populations": 20,
+    "profiles": 140,
+    "source_summary_files": 560,
+    "feature_bin_rows": 2800
+  },
+  "validation": {
+    "new_imputation_runs": false,
+    "new_prediction_runs": false,
+    "original_manuscript_panels_reproduced": false,
+    "remaining_samples_are_independent_new_validation": false
+  },
+  "populations": [
+    {
+      "species": "pig",
+      "population": "D",
+      "genome_build": "Sscrofa11.1",
+      "reference_resource": "PHARP 4.0",
+      "common_source_samples": 30,
+      "common_sample_ids_sha256": "830e185a000dd79765fb1251a92ff66cf39a6a725d4fe57723e56eee8e2517b9",
+      "selected_samples": [
+        "SAMN03031135",
+        "SAMN03031126",
+        "SAMN03031138",
+        "DU20822",
+        "SAMN03031139"
+      ]
+    },
+    {
+      "species": "pig",
+      "population": "DJ",
+      "genome_build": "Sscrofa11.1",
+      "reference_resource": "PHARP 4.0",
+      "common_source_samples": 30,
+      "common_sample_ids_sha256": "45ab0be79b2e1000d60e9daaebf00a789d07f77f6b09d1295ac450368f475861",
+      "selected_samples": [
+        "DJ-30",
+        "DJ-6",
+        "DJ-9",
+        "DJ-2",
+        "DJ-3"
+      ]
+    },
+    {
+      "species": "pig",
+      "population": "DT",
+      "genome_build": "Sscrofa11.1",
+      "reference_resource": "PHARP 4.0",
+      "common_source_samples": 30,
+      "common_sample_ids_sha256": "ba84152aef22fb8be0d54e1a376eba03f9a45571f9607f3b1b07b1bee1e6b599",
+      "selected_samples": [
+        "16.0",
+        "3.0",
+        "7.0",
+        "8.0",
+        "20.0"
+      ]
+    },
+    {
+      "species": "pig",
+      "population": "LWU",
+      "genome_build": "Sscrofa11.1",
+      "reference_resource": "PHARP 4.0",
+      "common_source_samples": 30,
+      "common_sample_ids_sha256": "7fef1f5bebd01c3f44a7188fe89666e859d0431a329fb70dbd94762e2ac2985f",
+      "selected_samples": [
+        "LW-F-2",
+        "LWU124",
+        "LWU123",
+        "LW356",
+        "LW355"
+      ]
+    },
+    {
+      "species": "pig",
+      "population": "MS",
+      "genome_build": "Sscrofa11.1",
+      "reference_resource": "PHARP 4.0",
+      "common_source_samples": 30,
+      "common_sample_ids_sha256": "50e38525a82a74df8facaf662bbc2688167ef7b32175aa60397c1069177d5e1c",
+      "selected_samples": [
+        "SAMN06603627",
+        "SAMN06579320",
+        "SAMN06562959",
+        "SAMN06579151",
+        "SAMN06562971"
+      ]
+    },
+    {
+      "species": "pig",
+      "population": "QP",
+      "genome_build": "Sscrofa11.1",
+      "reference_resource": "PHARP 4.0",
+      "common_source_samples": 30,
+      "common_sample_ids_sha256": "c33ba5f83dfd6c31e4ae54645f7ea56f6e535fc1599e896579ec749bda3d94ed",
+      "selected_samples": [
+        "SAMN09981837",
+        "SAMN09981836",
+        "SAMN09981839",
+        "SAMN09981840",
+        "SAMN09981863"
+      ]
+    },
+    {
+      "species": "pig",
+      "population": "TC",
+      "genome_build": "Sscrofa11.1",
+      "reference_resource": "PHARP 4.0",
+      "common_source_samples": 30,
+      "common_sample_ids_sha256": "fa5a41f1a1432d42bf7303b5721d040ad713315553286701705eba3ead6a9e45",
+      "selected_samples": [
+        "TC1_6",
+        "TC2_11",
+        "TC2_10",
+        "LJ_TC_061",
+        "LJ_TC_066"
+      ]
+    },
+    {
+      "species": "pig",
+      "population": "TP",
+      "genome_build": "Sscrofa11.1",
+      "reference_resource": "PHARP 4.0",
+      "common_source_samples": 30,
+      "common_sample_ids_sha256": "5d458b00c3c63b441b8be413f504d18228da26271f558762ac316acb065b8964",
+      "selected_samples": [
+        "SAMN01894369",
+        "SAMN01894407",
+        "SAMN01894367",
+        "SAMN02298111",
+        "SAMN02298100"
+      ]
+    },
+    {
+      "species": "pig",
+      "population": "WS",
+      "genome_build": "Sscrofa11.1",
+      "reference_resource": "PHARP 4.0",
+      "common_source_samples": 30,
+      "common_sample_ids_sha256": "b266d95855428a6fbdf1d301e9c9b4440ad32bb35cd71099a586f5009f4fbc49",
+      "selected_samples": [
+        "WZS_13",
+        "WZS_2",
+        "WZS_18",
+        "WZS_23",
+        "WZS_10"
+      ]
+    },
+    {
+      "species": "pig",
+      "population": "Y",
+      "genome_build": "Sscrofa11.1",
+      "reference_resource": "PHARP 4.0",
+      "common_source_samples": 30,
+      "common_sample_ids_sha256": "0206e1cdaa07a7c2edd3bac7dbafe72fa8fe30063cde8a6b828c2fa2f370f69e",
+      "selected_samples": [
+        "SAMN28771450",
+        "SAMN28771466",
+        "SAMN28771448",
+        "SAMN28771445",
+        "SAMN28771471"
+      ]
+    },
+    {
+      "species": "human",
+      "population": "AFR",
+      "genome_build": "GRCh37/hg19",
+      "reference_resource": "1000 Genomes / IGSR",
+      "common_source_samples": 30,
+      "common_sample_ids_sha256": "2d60cf09095ac2987add3ee9ee14df2f33e51990bbae444b20794343e6d83756",
+      "selected_samples": [
+        "HG02332",
+        "HG02317",
+        "HG02009",
+        "HG01990",
+        "HG02330"
+      ]
+    },
+    {
+      "species": "human",
+      "population": "AMR",
+      "genome_build": "GRCh37/hg19",
+      "reference_resource": "1000 Genomes / IGSR",
+      "common_source_samples": 30,
+      "common_sample_ids_sha256": "8f79c8a1554955d03df7c44cf4a7b697f46935c33d5f98ced2f218bb2c33f9e5",
+      "selected_samples": [
+        "HG01060",
+        "HG01110",
+        "HG01112",
+        "HG01075",
+        "HG00640"
+      ]
+    },
+    {
+      "species": "human",
+      "population": "EAS",
+      "genome_build": "GRCh37/hg19",
+      "reference_resource": "1000 Genomes / IGSR",
+      "common_source_samples": 30,
+      "common_sample_ids_sha256": "63c8a572528a82bd3458f9484480afce43030679f02819c40f609b4ed98443cc",
+      "selected_samples": [
+        "HG00451",
+        "HG00580",
+        "HG00583",
+        "HG00536",
+        "HG00475"
+      ]
+    },
+    {
+      "species": "human",
+      "population": "EUR",
+      "genome_build": "GRCh37/hg19",
+      "reference_resource": "1000 Genomes / IGSR",
+      "common_source_samples": 30,
+      "common_sample_ids_sha256": "515ccbd2913c4950f8691df11ffdc00d6e3765ec6f07cf7f2bd1f61af5a0fadc",
+      "selected_samples": [
+        "HG00141",
+        "HG00145",
+        "HG00107",
+        "HG00140",
+        "HG00126"
+      ]
+    },
+    {
+      "species": "human",
+      "population": "SAS",
+      "genome_build": "GRCh37/hg19",
+      "reference_resource": "1000 Genomes / IGSR",
+      "common_source_samples": 30,
+      "common_sample_ids_sha256": "26c543a46b5e9b72d7ba995231832031813b6c77f077a82a30319606b2f88ab8",
+      "selected_samples": [
+        "HG02696",
+        "HG02687",
+        "HG02597",
+        "HG02490",
+        "HG02493"
+      ]
+    },
+    {
+      "species": "chicken",
+      "population": "Glh",
+      "genome_build": "GRCg6a/galGal6",
+      "reference_resource": "ChickenGTEx",
+      "common_source_samples": 30,
+      "common_sample_ids_sha256": "1b5af0e52f4c4b01cbe79cacf6785fb9cdc6a7851b6f56344540313967fbe4ef",
+      "selected_samples": [
+        "BXY-17",
+        "BXY-12",
+        "BXY-19",
+        "BXY-8",
+        "BXY-28"
+      ]
+    },
+    {
+      "species": "chicken",
+      "population": "Leg",
+      "genome_build": "GRCg6a/galGal6",
+      "reference_resource": "ChickenGTEx",
+      "common_source_samples": 30,
+      "common_sample_ids_sha256": "0b11b37891e60ec34590b6a9cfb1b638dd2a8e19a1587f4f60248f6a40de1834",
+      "selected_samples": [
+        "SAMN03940092",
+        "SAMN16226606",
+        "SAMN16226562",
+        "SAMN16226575",
+        "SAMN16226580"
+      ]
+    },
+    {
+      "species": "chicken",
+      "population": "RJF",
+      "genome_build": "GRCg6a/galGal6",
+      "reference_resource": "ChickenGTEx",
+      "common_source_samples": 30,
+      "common_sample_ids_sha256": "2e971693fa8b7558ad8d773ef2288fa8e5ce71a4463588c56d027efbc90acff6",
+      "selected_samples": [
+        "SAMEA5160214",
+        "SAMEA5160223",
+        "SAMN14814792",
+        "SAMEA5160205",
+        "SAMN14814804"
+      ]
+    },
+    {
+      "species": "chicken",
+      "population": "Tibe",
+      "genome_build": "GRCg6a/galGal6",
+      "reference_resource": "ChickenGTEx",
+      "common_source_samples": 30,
+      "common_sample_ids_sha256": "207a5c15ef151a9d36d81ea092e3e9dd438075a839ee4db31c939435d7eef9a0",
+      "selected_samples": [
+        "C30",
+        "C25",
+        "C15",
+        "SAMN04455071",
+        "SAMN15784077"
+      ]
+    },
+    {
+      "species": "chicken",
+      "population": "YpD",
+      "genome_build": "GRCg6a/galGal6",
+      "reference_resource": "ChickenGTEx",
+      "common_source_samples": 30,
+      "common_sample_ids_sha256": "e20b7fa31760c871076eb21bcb802665a2891f2f8228b8d67cce2068797a5d40",
+      "selected_samples": [
+        "d7541",
+        "d6554",
+        "d6512",
+        "d6589",
+        "d6591"
+      ]
+    }
+  ]
+}

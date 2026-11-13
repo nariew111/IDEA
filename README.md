@@ -21,6 +21,7 @@ different phenotypes while the predictive marker set changes with the task.
 [IDEA-design guide](docs/idea_design.md) ·
 [IDEA-GP guide](docs/idea_gp.md) ·
 [Data access](docs/data_availability.md) ·
+[Weights and calibration](resources/idea_design/README.md) ·
 [Reproducibility](docs/manuscript_reproducibility.md) ·
 [中文入门](docs/quickstart_zh.md)
 
@@ -40,8 +41,11 @@ on held-out individuals.
 
 The figure describes the study workflow. The software provided here includes
 feature preparation, prepared-feature selection, imputation/evaluation runners
-and the IDEA-GP engine. Study-specific calibration/model-fitting materials and
-final benchmark inputs are tracked separately in the
+and the IDEA-GP engine. The archived fixed weights and dated calibration
+resources are provided under
+[`resources/idea_design/`](resources/idea_design/README.md). Their provenance,
+including the distinction between historical inputs and new reconstruction,
+and remaining model-fitting materials are tracked in the
 [reproducibility record](docs/manuscript_reproducibility.md).
 
 ## Study scope
@@ -182,17 +186,42 @@ cross-validation settings, optional quality scores, output locations and model
 backends. A full redistributable genotype/phenotype demonstration is not yet
 included in this snapshot.
 
+## Fixed weights and calibration profiles
+
+The [IDEA-design resource bundle](resources/idea_design/README.md) includes the
+unchanged archived scoring weights, source-file hashes and 140 calibration
+profiles spanning the study's 20 populations. There are two explicitly
+distinguished records: the values selected by the historical summary reader,
+and a new five-sample reconstruction dated 2026-11-13. The latter is not a
+recovered original ABS and has not been used to rerun the biological benchmarks.
+
+Export a new reconstruction profile into the selector's input format:
+
+```bash
+python scripts/export_calibration.py \
+  --species pig --population D --density 1000 \
+  --output-dir results/calibration/pig_D_1000
+```
+
+Use the exported `feature_importance1.csv` and feature-summary directory as
+`--feature-weight` and `--summary-root`, together with compatible candidate
+annotations. Here, `1000` identifies the archived representative-chromosome
+density, not the total genome-wide panel size. The resource guide explains
+available profiles, sample selection, feature-bin compatibility and the
+explicit `--historical` export option.
+
 ## Available materials and reproducibility
 
 This repository provides core software, installation metadata, usage guides,
-example configurations and an artificial selection example. Individual-level
+example configurations, an artificial selection example, archived fixed weights
+and documented calibration resources. Individual-level
 UK Biobank and company-derived porcine data are accessed through their providers
 and are not redistributed here. Reference-resource links and access routes are
 listed in [Data resources and access](docs/data_availability.md).
 
-The manuscript's actual population-calibration inputs, fixed feature weights,
+The original five-sample ABS membership, frozen numerical feature-bin thresholds,
 evaluated SNP lists and final analysis/plotting scripts still need to be matched
-to the final study version and deposited. Their status is recorded explicitly in
+to the final study version. Their status is recorded explicitly in
 the [study reproducibility record](docs/manuscript_reproducibility.md).
 The artificial example parameters must not be substituted for those materials.
 
@@ -202,7 +231,8 @@ Run the package regression checks with:
 pytest -q
 ```
 
-These checks cover CLI entry points and small-example selection. They do not
+These checks cover CLI entry points, small-example selection, resource integrity
+and calibration export/reader compatibility. They do not
 constitute a rerun of the biological imputation or prediction benchmarks.
 
 ## Repository layout
@@ -213,7 +243,8 @@ src/idea/                 IDEA-design and preserved engine scripts
 src/idea_gp/              IDEA-GP and preserved prediction engine
 configs/                  IDEA-design YAML and IDEA-GP shell example
 examples/toy/             artificial inputs and expected SNP list
-scripts/                  small-example runner
+resources/idea_design/    fixed weights, dated calibration and historical provenance
+scripts/                  example runner, calibration export and reconstruction
 tests/                    package regression checks
 docs/                     guides, data access and reproducibility records
 CITATION.cff              software citation metadata

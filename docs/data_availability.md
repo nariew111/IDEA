@@ -1,7 +1,8 @@
 # Data resources and access
 
-This software repository contains source code, documentation, tests and a small
-artificial feature-table example. Its MIT software licence applies to the
+This software repository contains source code, documentation, tests, a small
+artificial feature-table example, archived fixed weights and documented
+calibration resources. Its MIT software licence applies to the
 software; access to third-party research data is governed by the data providers.
 
 ## Reference resources used in the associated study
@@ -42,5 +43,15 @@ were manually specified without participant-level data.
 The prepared manuscript supplementary tables and numerical source-data files
 are separate publication materials. Their final archive and the fixed SNP lists
 should be cited in the manuscript once the matching records have been deposited.
-The current status of these files and the actual calibration parameters is
-listed in the [reproducibility record](manuscript_reproducibility.md).
+The fixed scoring object, source hashes and aggregate calibration tables are
+available in [`resources/idea_design/`](../resources/idea_design/README.md).
+The package distinguishes preserved historical reader priorities from a new
+five-sample reconstruction generated on 2026-11-13. The selected reference-sample
+IDs and exact reconstruction protocol are provided; individual evaluation rows
+are not redistributed. The human calibration archive comes from the
+1000 Genomes/IGSR SNP-imputation benchmark, not UK Biobank participants.
+This new reconstruction does not identify the study's original ABS membership
+or establish reproduction of its existing panels and results.
+
+The remaining status is listed in the
+[reproducibility record](manuscript_reproducibility.md).

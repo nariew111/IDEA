@@ -1,0 +1,101 @@
+species	population	selection_order	sample_id	reference_resource	role
+pig	D	1	SAMN03031135	PHARP 4.0	post_study_reconstruction_only
+pig	D	2	SAMN03031126	PHARP 4.0	post_study_reconstruction_only
+pig	D	3	SAMN03031138	PHARP 4.0	post_study_reconstruction_only
+pig	D	4	DU20822	PHARP 4.0	post_study_reconstruction_only
+pig	D	5	SAMN03031139	PHARP 4.0	post_study_reconstruction_only
+pig	DJ	1	DJ-30	PHARP 4.0	post_study_reconstruction_only
+pig	DJ	2	DJ-6	PHARP 4.0	post_study_reconstruction_only
+pig	DJ	3	DJ-9	PHARP 4.0	post_study_reconstruction_only
+pig	DJ	4	DJ-2	PHARP 4.0	post_study_reconstruction_only
+pig	DJ	5	DJ-3	PHARP 4.0	post_study_reconstruction_only
+pig	DT	1	16.0	PHARP 4.0	post_study_reconstruction_only
+pig	DT	2	3.0	PHARP 4.0	post_study_reconstruction_only
+pig	DT	3	7.0	PHARP 4.0	post_study_reconstruction_only
+pig	DT	4	8.0	PHARP 4.0	post_study_reconstruction_only
+pig	DT	5	20.0	PHARP 4.0	post_study_reconstruction_only
+pig	LWU	1	LW-F-2	PHARP 4.0	post_study_reconstruction_only
+pig	LWU	2	LWU124	PHARP 4.0	post_study_reconstruction_only
+pig	LWU	3	LWU123	PHARP 4.0	post_study_reconstruction_only
+pig	LWU	4	LW356	PHARP 4.0	post_study_reconstruction_only
+pig	LWU	5	LW355	PHARP 4.0	post_study_reconstruction_only
+pig	MS	1	SAMN06603627	PHARP 4.0	post_study_reconstruction_only
+pig	MS	2	SAMN06579320	PHARP 4.0	post_study_reconstruction_only
+pig	MS	3	SAMN06562959	PHARP 4.0	post_study_reconstruction_only
+pig	MS	4	SAMN06579151	PHARP 4.0	post_study_reconstruction_only
+pig	MS	5	SAMN06562971	PHARP 4.0	post_study_reconstruction_only
+pig	QP	1	SAMN09981837	PHARP 4.0	post_study_reconstruction_only
+pig	QP	2	SAMN09981836	PHARP 4.0	post_study_reconstruction_only
+pig	QP	3	SAMN09981839	PHARP 4.0	post_study_reconstruction_only
+pig	QP	4	SAMN09981840	PHARP 4.0	post_study_reconstruction_only
+pig	QP	5	SAMN09981863	PHARP 4.0	post_study_reconstruction_only
+pig	TC	1	TC1_6	PHARP 4.0	post_study_reconstruction_only
+pig	TC	2	TC2_11	PHARP 4.0	post_study_reconstruction_only
+pig	TC	3	TC2_10	PHARP 4.0	post_study_reconstruction_only
+pig	TC	4	LJ_TC_061	PHARP 4.0	post_study_reconstruction_only
+pig	TC	5	LJ_TC_066	PHARP 4.0	post_study_reconstruction_only
+pig	TP	1	SAMN01894369	PHARP 4.0	post_study_reconstruction_only
+pig	TP	2	SAMN01894407	PHARP 4.0	post_study_reconstruction_only
+pig	TP	3	SAMN01894367	PHARP 4.0	post_study_reconstruction_only
+pig	TP	4	SAMN02298111	PHARP 4.0	post_study_reconstruction_only
+pig	TP	5	SAMN02298100	PHARP 4.0	post_study_reconstruction_only
+pig	WS	1	WZS_13	PHARP 4.0	post_study_reconstruction_only
+pig	WS	2	WZS_2	PHARP 4.0	post_study_reconstruction_only
+pig	WS	3	WZS_18	PHARP 4.0	post_study_reconstruction_only
+pig	WS	4	WZS_23	PHARP 4.0	post_study_reconstruction_only
+pig	WS	5	WZS_10	PHARP 4.0	post_study_reconstruction_only
+pig	Y	1	SAMN28771450	PHARP 4.0	post_study_reconstruction_only
+pig	Y	2	SAMN28771466	PHARP 4.0	post_study_reconstruction_only
+pig	Y	3	SAMN28771448	PHARP 4.0	post_study_reconstruction_only
+pig	Y	4	SAMN28771445	PHARP 4.0	post_study_reconstruction_only
+pig	Y	5	SAMN28771471	PHARP 4.0	post_study_reconstruction_only
+human	AFR	1	HG02332	1000 Genomes / IGSR	post_study_reconstruction_only
+human	AFR	2	HG02317	1000 Genomes / IGSR	post_study_reconstruction_only
+human	AFR	3	HG02009	1000 Genomes / IGSR	post_study_reconstruction_only
+human	AFR	4	HG01990	1000 Genomes / IGSR	post_study_reconstruction_only
+human	AFR	5	HG02330	1000 Genomes / IGSR	post_study_reconstruction_only
+human	AMR	1	HG01060	1000 Genomes / IGSR	post_study_reconstruction_only
+human	AMR	2	HG01110	1000 Genomes / IGSR	post_study_reconstruction_only
+human	AMR	3	HG01112	1000 Genomes / IGSR	post_study_reconstruction_only
+human	AMR	4	HG01075	1000 Genomes / IGSR	post_study_reconstruction_only
+human	AMR	5	HG00640	1000 Genomes / IGSR	post_study_reconstruction_only
+human	EAS	1	HG00451	1000 Genomes / IGSR	post_study_reconstruction_only
+human	EAS	2	HG00580	1000 Genomes / IGSR	post_study_reconstruction_only
+human	EAS	3	HG00583	1000 Genomes / IGSR	post_study_reconstruction_only
+human	EAS	4	HG00536	1000 Genomes / IGSR	post_study_reconstruction_only
+human	EAS	5	HG00475	1000 Genomes / IGSR	post_study_reconstruction_only
+human	EUR	1	HG00141	1000 Genomes / IGSR	post_study_reconstruction_only
+human	EUR	2	HG00145	1000 Genomes / IGSR	post_study_reconstruction_only
+human	EUR	3	HG00107	1000 Genomes / IGSR	post_study_reconstruction_only
+human	EUR	4	HG00140	1000 Genomes / IGSR	post_study_reconstruction_only
+human	EUR	5	HG00126	1000 Genomes / IGSR	post_study_reconstruction_only
+human	SAS	1	HG02696	1000 Genomes / IGSR	post_study_reconstruction_only
+human	SAS	2	HG02687	1000 Genomes / IGSR	post_study_reconstruction_only
+human	SAS	3	HG02597	1000 Genomes / IGSR	post_study_reconstruction_only
+human	SAS	4	HG02490	1000 Genomes / IGSR	post_study_reconstruction_only
+human	SAS	5	HG02493	1000 Genomes / IGSR	post_study_reconstruction_only
+chicken	Glh	1	BXY-17	ChickenGTEx	post_study_reconstruction_only
+chicken	Glh	2	BXY-12	ChickenGTEx	post_study_reconstruction_only
+chicken	Glh	3	BXY-19	ChickenGTEx	post_study_reconstruction_only
+chicken	Glh	4	BXY-8	ChickenGTEx	post_study_reconstruction_only
+chicken	Glh	5	BXY-28	ChickenGTEx	post_study_reconstruction_only
+chicken	Leg	1	SAMN03940092	ChickenGTEx	post_study_reconstruction_only
+chicken	Leg	2	SAMN16226606	ChickenGTEx	post_study_reconstruction_only
+chicken	Leg	3	SAMN16226562	ChickenGTEx	post_study_reconstruction_only
+chicken	Leg	4	SAMN16226575	ChickenGTEx	post_study_reconstruction_only
+chicken	Leg	5	SAMN16226580	ChickenGTEx	post_study_reconstruction_only
+chicken	RJF	1	SAMEA5160214	ChickenGTEx	post_study_reconstruction_only
+chicken	RJF	2	SAMEA5160223	ChickenGTEx	post_study_reconstruction_only
+chicken	RJF	3	SAMN14814792	ChickenGTEx	post_study_reconstruction_only
+chicken	RJF	4	SAMEA5160205	ChickenGTEx	post_study_reconstruction_only
+chicken	RJF	5	SAMN14814804	ChickenGTEx	post_study_reconstruction_only
+chicken	Tibe	1	C30	ChickenGTEx	post_study_reconstruction_only
+chicken	Tibe	2	C25	ChickenGTEx	post_study_reconstruction_only
+chicken	Tibe	3	C15	ChickenGTEx	post_study_reconstruction_only
+chicken	Tibe	4	SAMN04455071	ChickenGTEx	post_study_reconstruction_only
+chicken	Tibe	5	SAMN15784077	ChickenGTEx	post_study_reconstruction_only
+chicken	YpD	1	d7541	ChickenGTEx	post_study_reconstruction_only
+chicken	YpD	2	d6554	ChickenGTEx	post_study_reconstruction_only
+chicken	YpD	3	d6512	ChickenGTEx	post_study_reconstruction_only
+chicken	YpD	4	d6589	ChickenGTEx	post_study_reconstruction_only
+chicken	YpD	5	d6591	ChickenGTEx	post_study_reconstruction_only

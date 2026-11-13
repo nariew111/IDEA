@@ -45,8 +45,30 @@ or unrecognized summary can trigger a fallback ranking. Provide the actual
 calibration summaries when applying the calibrated method.
 
 The four feature weights and summaries under `examples/toy/` are manually chosen
-demonstration inputs, not manuscript parameters. See
-[reproducibility status](manuscript_reproducibility.md).
+demonstration inputs. Actual archived fixed weights are supplied separately in
+[`resources/idea_design/`](../resources/idea_design/README.md), together with
+historical reader priorities and a new, dated five-sample calibration
+reconstruction. The reconstruction is not the original study ABS. See the
+resource guide and [reproducibility status](manuscript_reproducibility.md).
+
+To export one checked-in reconstruction profile:
+
+```bash
+python scripts/export_calibration.py \
+  --species human --population EUR --density 1600 \
+  --output-dir results/calibration/human_EUR_1600
+```
+
+Then supply that directory's `feature_importance1.csv` and the directory itself
+as `--feature-weight` and `--summary-root`. The density identifies the archived
+representative-chromosome setting; it is independent of a new requested marker
+total. Unknown population/density pairs are rejected.
+
+These resources calibrate priorities for existing feature-bin labels. They do
+not provide numerical feature thresholds. To retain a given bin definition,
+include matching `<feature>_BIN` columns in the candidate table. Automatic
+equal-width discretization of unbinned inputs must not be assumed to recreate
+the study's historical empirical bin assignments.
 
 ## Select a requested marker count
 

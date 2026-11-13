@@ -1,5 +1,21 @@
 # Changelog
 
+## Fixed weights and calibration resources — 2026-11-13
+
+- Archive the unchanged publication scoring file and its checksum, with a
+  convenience file omitting only zero-weight features.
+- Preserve historical summary-reader priorities and their row-selection
+  provenance instead of silently treating a last-row fallback as a mean.
+- Add a clearly dated five-sample reconstruction covering 20 populations and
+  140 density profiles, using deterministic ID-based selection and existing
+  rounded imputation-evaluation results.
+- Include sample membership, aggregate means, bin priorities, source-file hashes,
+  standard-library reconstruction/export scripts and compatibility tests.
+- Document that the reconstruction is not the original ABS, does not provide
+  frozen numerical feature thresholds and has not rerun biological benchmarks.
+
+The existing selection and prediction engines remain unchanged.
+
 ## Documentation and framework update — 2026-11-12
 
 - Replace the earlier remote framework image with the author-supplied Figure 1,
